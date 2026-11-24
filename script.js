@@ -1,13 +1,13 @@
 /*
- * GRADUATION BOARDING PASS — NGUYỄN NGỌC HẢI
+ * GRADUATION BOARDING PASS — Vũ Thái Tuấn
  * Chạy trực tiếp bằng cách mở index.html, không cần cài đặt.
  * Chỉnh thông tin lễ tốt nghiệp ở phần CONFIG bên dưới.
  */
 
 const CONFIG = {
-  graduate: 'Nguyễn Ngọc Hải',
+  graduate: 'Vũ Thái Tuấn',
   eventDate: '2026-11-27T15:00:00+07:00', // 15:00, giờ Việt Nam
-  eventTitle: 'Lễ tốt nghiệp — Nguyễn Ngọc Hải',
+  eventTitle: 'Lễ tốt nghiệp — Vũ Thái Tuấn',
   venue: 'Hội trường A5, Trường Đại học Bách khoa, 268 Lý Thường Kiệt, TP. Hồ Chí Minh',
   // Giờ làm lễ 15:00–16:30, dùng đúng thời lượng 90 phút trong lịch .ics.
   eventDurationMinutes: 90,
@@ -42,17 +42,17 @@ const INVITE_STYLES = { 'kinh-moi': 'KÍNH MỜI', 'than-moi': 'THÂN MỜI', 't
 const DEFAULT_QUOTE = 'Điều đáng quý nhất của hành trình không chỉ là đích đến, mà còn là những người đã đồng hành cùng mình.';
 const INVITE_PRESETS = {
   default: {
-    messageTemplate: 'Hành trình đại học sẽ trọn vẹn hơn khi có {doi_tuong} ở đó. Hải rất mong được gặp {doi_tuong} trong ngày đặc biệt này!',
+    messageTemplate: 'Hành trình đại học sẽ trọn vẹn hơn khi có {doi_tuong} ở đó. Tuấn rất mong được gặp {doi_tuong} trong ngày đặc biệt này!',
     quoteTemplate: DEFAULT_QUOTE,
-    closingTemplate: 'Hẹn gặp {doi_tuong} tại lễ tốt nghiệp của Hải. 🎓📸',
+    closingTemplate: 'Hẹn gặp {doi_tuong} tại lễ tốt nghiệp của Tuấn. 🎓📸',
   },
   formal: {
-    messageTemplate: 'Sự hiện diện của {doi_tuong} sẽ là niềm vinh hạnh và động viên lớn lao trong ngày tốt nghiệp của Hải. Hải rất mong được đón tiếp {doi_tuong}!',
+    messageTemplate: 'Sự hiện diện của {doi_tuong} sẽ là niềm vinh hạnh và động viên lớn lao trong ngày tốt nghiệp của Tuấn. Tuấn rất mong được đón tiếp {doi_tuong}!',
     quoteTemplate: DEFAULT_QUOTE,
-    closingTemplate: 'Trân trọng đón tiếp {doi_tuong} tại lễ tốt nghiệp của Hải. 🎓📸',
+    closingTemplate: 'Trân trọng đón tiếp {doi_tuong} tại lễ tốt nghiệp của Tuấn. 🎓📸',
   },
   friendly: {
-    messageTemplate: 'Sau những năm tháng ở Bách Khoa, ngày đặc biệt này sẽ vui hơn rất nhiều khi có {doi_tuong} cùng chia sẻ. Hải mong được gặp {doi_tuong} nhé!',
+    messageTemplate: 'Sau những năm tháng ở Bách Khoa, ngày đặc biệt này sẽ vui hơn rất nhiều khi có {doi_tuong} cùng chia sẻ. Tuấn mong được gặp {doi_tuong} nhé!',
     quoteTemplate: 'Thanh xuân đẹp nhất là những khoảnh khắc có người thân thương đồng hành.',
     closingTemplate: 'Hẹn gặp {doi_tuong} ở Bách Khoa, cùng chụp thật nhiều ảnh nhé! 🎓📸',
   },
@@ -61,7 +61,7 @@ const INVITE_PRESETS = {
 const validInviteStyle = Object.hasOwn(INVITE_STYLES, qs.get('st')) ? qs.get('st') : 'kinh-moi';
 const initialPreset = Object.hasOwn(INVITE_PRESETS, qs.get('pr')) ? qs.get('pr') : 'default';
 let invitePresentation = { invitationStyle: validInviteStyle, ...INVITE_PRESETS[initialPreset] };
-// txt chỉ dùng khi Hải tự sửa câu chữ. Mã hóa UTF-8 thành base64url.
+// txt chỉ dùng khi Tuấn tự sửa câu chữ. Mã hóa UTF-8 thành base64url.
 try {
   const override = JSON.parse(decodeCompactName(qs.get('txt')) || 'null');
   if (Array.isArray(override) && override.length === 3) {
@@ -88,7 +88,7 @@ function renderTemplate(template, name = guestName, salutation = salutationCode)
 function renderMessage(element, message) {
   if (!element) return;
   element.replaceChildren();
-  const keyword = 'Hải rất mong';
+  const keyword = 'Tuấn rất mong';
   const at = message.indexOf(keyword);
   if (at > 0) {
     element.append(document.createTextNode(message.slice(0, at)));
@@ -106,7 +106,7 @@ function renderGuest() {
   renderMessage(document.getElementById('invite-message'), renderTemplate(invitePresentation.messageTemplate));
   document.getElementById('invite-quote').textContent = `“${renderTemplate(invitePresentation.quoteTemplate)}”`;
   document.getElementById('invite-closing').textContent = renderTemplate(invitePresentation.closingTemplate);
-  if (requestedGuest) document.title = `Thiệp mời ${requestedGuest} · Tốt nghiệp Nguyễn Ngọc Hải`;
+  if (requestedGuest) document.title = `Thiệp mời ${requestedGuest} · Tốt nghiệp Vũ Thái Tuấn`;
 }
 renderGuest();
 
@@ -281,7 +281,7 @@ function readPinFromURL() {
   }
   const raw = qs.get('pin');
   if (raw === 'off') return null;
-  // Điểm hẹn Hải đánh dấu trên ảnh tham khảo, có thể thay bằng chế độ ?builder=1.
+  // Điểm hẹn Tuấn đánh dấu trên ảnh tham khảo, có thể thay bằng chế độ ?builder=1.
   if (!raw) return { ...DEFAULT_PIN };
   const coordinates = raw.split(',').map(Number);
   if (coordinates.length !== 2 || coordinates.some((value) => !Number.isFinite(value) || value < 0 || value > 100)) return null;
@@ -302,7 +302,7 @@ function renderMeetingPin() {
     pinLabel.textContent = meetingPin.label;
     pinMarker.setAttribute('aria-label', meetingPin.label === DEFAULT_PIN.label ? 'Điểm hẹn' : `Điểm hẹn: ${meetingPin.label}`);
     if (photoMeetingText) photoMeetingText.textContent = meetingPin.label === DEFAULT_PIN.label
-      ? '📍 Xem PIN vàng trên bản đồ để đến điểm hẹn của Hải.'
+      ? '📍 Xem PIN vàng trên bản đồ để đến điểm hẹn của Tuấn.'
       : `📍 Điểm hẹn: ${meetingPin.label}. Xem PIN vàng trên bản đồ để tìm đúng vị trí.`;
   } else if (photoMeetingText) {
     photoMeetingText.innerHTML = defaultPhotoMeetingHTML;
@@ -539,7 +539,7 @@ function downloadCalendarEvent() {
     `DTEND:${utcStamp(end)}`,
     `SUMMARY:${escapeICS(CONFIG.eventTitle)}`,
     `LOCATION:${escapeICS(CONFIG.venue)}`,
-    `DESCRIPTION:${escapeICS('Thiệp mời dành cho ' + guestName + '. Hẹn gặp bạn tại lễ tốt nghiệp của Hải!')}`,
+    `DESCRIPTION:${escapeICS('Thiệp mời dành cho ' + guestName + '. Hẹn gặp bạn tại lễ tốt nghiệp của Tuấn!')}`,
     'END:VEVENT',
     'END:VCALENDAR',
   ];
@@ -584,8 +584,8 @@ async function copyText(value) {
 
 document.getElementById('share-button').addEventListener('click', async () => {
   const shareData = {
-    title: 'Thiệp mời tốt nghiệp của Hải',
-    text: `${(INVITE_STYLES[invitePresentation.invitationStyle] || 'THÂN MỜI').toLocaleLowerCase('vi-VN')} ${guestAddress} đến dự lễ tốt nghiệp của Hải ngày 27.11.2026!`,
+    title: 'Thiệp mời tốt nghiệp của Tuấn',
+    text: `${(INVITE_STYLES[invitePresentation.invitationStyle] || 'THÂN MỜI').toLocaleLowerCase('vi-VN')} ${guestAddress} đến dự lễ tốt nghiệp của Tuấn ngày 27.11.2026!`,
     url: createShareableURL(requestedGuest).href,
   };
   if (navigator.share) {
