@@ -10,7 +10,7 @@ const CONFIG = {
   eventTitle: 'Lễ tốt nghiệp — Vũ Thái Tuấn',
   venue: 'Hội trường A5, Trường Đại học Bách khoa, 268 Lý Thường Kiệt, TP. Hồ Chí Minh',
   // Giờ làm lễ 13:30–15:30, dùng đúng thời lượng 90 phút trong lịch .ics.
-  eventDurationMinutes: 90,
+  eventDurationMinutes: 120,
 };
 
 const qs = new URLSearchParams(window.location.search);
