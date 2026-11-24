@@ -263,7 +263,7 @@ const pinEditor = document.getElementById('pin-editor');
 const pinPickButton = document.getElementById('pin-pick-button');
 const pinShareOutput = document.getElementById('pin-share-output');
 
-const DEFAULT_PIN = { x: 29.4, y: 35.8, label: 'HERE' };
+const DEFAULT_PIN = { x: 29.4, y: 35.8, label: 'Điểm hẹn' };
 function normalizeMeetingLabel(label) {
   const name = String(label || '').trim().slice(0, 70);
   return !name || name.toLocaleLowerCase('vi-VN') === 'điểm hẹn chụp ảnh' ? 'Điểm hẹn' : name;
