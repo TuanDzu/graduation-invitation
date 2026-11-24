@@ -547,7 +547,7 @@ function downloadCalendarEvent() {
   const url = URL.createObjectURL(blob);
   const anchor = document.createElement('a');
   anchor.href = url;
-  anchor.download = 'Le_Tot_Nghiep_Nguyen_Ngoc_Hai_2026.ics';
+  anchor.download = 'Le_Tot_Nghiep_2026.ics';
   document.body.append(anchor);
   anchor.click();
   anchor.remove();
