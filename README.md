@@ -1,6 +1,6 @@
 # Bách Khoa Premium — V10.2 · GitHub Pages (không server)
 
-Đây là website thiệp mời tốt nghiệp Nguyễn Ngọc Hải, chuyển từ V10.1 sang **website tĩnh 100%**.
+Đây là website thiệp mời tốt nghiệp Tuấn Vũ, chuyển từ V10.1 sang **website tĩnh 100%**.
 
 ## Cấu trúc
 
