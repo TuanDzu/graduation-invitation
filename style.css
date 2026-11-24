@@ -1,0 +1,621 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&display=swap');
+
+:root{color-scheme:light;--navy:#10223e;--navy-dark:#09182e;--red:#cf2840;--paper:#f8f0e0;--paper-warm:#f3e8d2;--muted:#697185;--gold:#dea84b;--border:#e5d7be;--cream-white:#fffaf0;font-family:'DM Sans',Arial,sans-serif;font-synthesis:none}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-width:320px;background:radial-gradient(ellipse 60% 60% at 16% 13%,#274a7e 0%,transparent 70%),radial-gradient(ellipse 45% 60% at 80% 70%,#142d55 0%,transparent 75%),#09182e;color:var(--navy);overflow-x:hidden}button,a,input{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #edae3b;outline-offset:3px}img{max-width:100%;display:block}[hidden]{display:none!important}
+.sky{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}.sky:before,.sky:after{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,#fff 1px,transparent 1.5px);background-size:190px 179px;background-position:30px 80px;opacity:.38}.sky:after{background-size:293px 245px;background-position:160px 32px;opacity:.17}.star{position:absolute;width:3px;height:3px;background:#e3eafd;border-radius:50%;box-shadow:0 0 8px #fff8}.s1{left:9%;top:15%}.s2{left:17%;top:72%}.s3{left:83%;top:13%}.s4{left:92%;top:81%}.s5{left:5%;top:58%}.s6{left:74%;top:91%}.s7{left:52%;top:6%}.s8{left:96%;top:26%}
+.app-shell{max-width:1480px;margin:0 auto;padding:42px 34px 24px;position:relative;z-index:1}.eyebrow-row{display:flex;justify-content:center;align-items:center;gap:17px;color:#d6e1ee;letter-spacing:.24em;font-weight:800;font-size:11px;margin:0 auto 29px;text-transform:uppercase}.eyebrow-row span:nth-of-type(4){opacity:.55}.eyebrow-line{height:1px;max-width:74px;flex:1;background:linear-gradient(90deg,transparent,#acb9ca)}.eyebrow-line:last-child{transform:scaleX(-1)}.eyebrow-sparkle{font-size:11px;color:var(--gold)}
+.boarding-pass{background:var(--paper);border-radius:27px;overflow:hidden;box-shadow:0 24px 80px #0006,0 2px 0 #ffffff66 inset;position:relative;border:1px solid #fff3}.ticket-header{min-height:82px;background:var(--red);color:white;display:flex;justify-content:space-between;align-items:center;padding:15px 38px;gap:20px}.brand-lockup{display:flex;align-items:center;gap:17px}.brand-mark{width:42px;height:45px;display:grid;place-items:center;border-radius:12px;background:#fff;color:#15519b;box-shadow:0 4px 0 #9b172a55;clip-path:polygon(50% 0,92% 18%,92% 80%,50% 100%,8% 80%,8% 18%)}.brand-mark span{font-size:17px;font-weight:900;letter-spacing:-2px;border-bottom:4px solid #2b75ba;line-height:1}.brand-name{display:flex;gap:9px;align-items:center;font-family:'Manrope',Arial,sans-serif;font-size:20px;font-weight:800;letter-spacing:-.02em}.brand-icon{font-size:25px;transform:rotate(-13deg);display:inline-block}.brand-separator{opacity:.35;padding:0 3px}.brand-school{font-size:18px}.header-right{display:flex;align-items:center;gap:18px}.header-year{border:1px solid #ffffff61;padding:6px 9px;border-radius:5px;letter-spacing:.13em;font-size:12px;font-weight:800}.header-class{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.07em;font-size:16px}
+.ticket-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.98fr)}.ticket-left{padding:34px 36px 31px;border-right:2px dashed #d7c9af;position:relative;min-width:0}.ticket-right{padding:35px 36px 30px 37px;min-width:0}.ticket-left:before,.ticket-left:after{content:'';position:absolute;right:-13px;width:24px;height:24px;border-radius:50%;background:#153158;z-index:2}.ticket-left:before{top:-12px}.ticket-left:after{bottom:-12px}
+.passenger-area{display:flex;align-items:flex-start;gap:23px}.portrait-frame{width:130px;height:153px;border:4px solid var(--navy);border-radius:17px;flex-shrink:0;overflow:hidden;position:relative;box-shadow:0 4px 0 #d9caaa;background:#dae4ea}.portrait-frame img{width:100%;height:100%;object-fit:cover}.portrait-corner{position:absolute;right:7px;top:6px;color:#fff;text-shadow:0 1px 5px #12243c;font-size:15px}.passenger-copy{padding-top:5px;min-width:0}.section-kicker{display:flex;gap:8px;align-items:center;letter-spacing:.15em;font-size:12px;font-weight:800;color:#a0642b}.kicker-dot{width:7px;height:7px;background:var(--red);border-radius:50%;display:inline-block}.passenger-copy h1{font-family:'Manrope',Arial,sans-serif;font-size:clamp(25px,2.4vw,39px);line-height:1.09;letter-spacing:-.055em;font-weight:800;margin:9px 0 9px;color:var(--navy)}.passenger-copy h1 span{color:#ca2840}.university{font-size:13px;font-weight:700;color:#657083;margin:0 0 13px;line-height:1.6}.university span{padding:0 5px;color:#c6ac7e}.achievement-pill{display:inline-flex;align-items:center;gap:7px;padding:8px 12px;border-radius:40px;border:1px solid #e4cf9e;background:#f5e5c0;color:#7c5824;font-size:10px;font-weight:800;letter-spacing:.065em}.achievement-pill span:first-child{color:#ca2840}
+.flight-route{display:flex;align-items:center;justify-content:space-between;gap:11px;margin:30px 0 27px}.route-stop{display:flex;flex-direction:column}.route-stop strong{font-size:54px;letter-spacing:-.055em;line-height:1;font-family:'Manrope',Arial,sans-serif;font-weight:800}.route-stop span{font-size:12px;font-weight:800;letter-spacing:.09em;color:#626e7e;margin-top:7px}.route-destination{text-align:right}.flight-path{align-self:center;flex:1;min-width:35px;position:relative;height:30px;display:flex;align-items:center;justify-content:center}.path-line{width:100%;border-top:2px dashed #d94a59}.flying-plane{position:absolute;background:var(--paper);padding:0 10px;color:#cd2b45;font-size:26px;transform:translateY(-1px);animation:planeDrift 3.5s ease-in-out infinite}
+.details-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:23px 16px;border-top:1px solid #d7cbb6;border-bottom:1px solid #d7cbb6;padding:24px 0 24px}.detail{min-width:0}.detail-label{display:block;font-size:11px;letter-spacing:.09em;font-weight:800;color:#757c86;margin-bottom:7px}.detail strong{display:block;font-family:'Manrope',Arial,sans-serif;font-size:18px;letter-spacing:-.045em;font-weight:800;white-space:nowrap}.location-block{padding:23px 0 18px}.location-title{display:flex;gap:8px;align-items:flex-start;line-height:1.45}.location-title strong{font-size:17px;font-family:'Manrope',Arial,sans-serif;letter-spacing:-.03em}.location-icon{color:#cb2b42;font-size:26px;line-height:1}.location-block p{color:#6c7180;margin:8px 0 0 34px;font-size:13px;font-weight:600}
+.message-card{background:#f1e2c6;border-radius:13px;padding:16px 18px;display:flex;gap:13px;border-left:3px solid #e3a83d}.message-quote{font-family:Georgia,serif;font-size:55px;line-height:.9;color:#d9a044}.message-card p{margin:0;font-size:15px;line-height:1.55;color:#263148}.message-card strong{color:#10223e}
+.countdown{background:var(--navy);border-radius:15px;margin-top:19px;text-align:center;padding:16px 12px 17px;color:#fff;box-shadow:0 5px 0 #cfc5b2}.countdown-title{color:#eabd72;font-size:11px;letter-spacing:.16em;font-weight:800;display:flex;align-items:center;justify-content:center;gap:9px}.gold-dot{height:5px;width:5px;border-radius:50%;background:#e4b45b}.timer-numbers{margin-top:8px;display:flex;align-items:baseline;justify-content:center;gap:8px;flex-wrap:wrap;font-family:ui-monospace,SFMono-Regular,Consolas,monospace}.timer-numbers span{font-size:30px;font-weight:800;letter-spacing:-.035em}.timer-numbers small{font-size:11px;color:#d6dfed;margin-right:5px;font-weight:500}.guest-strip{background:var(--navy);color:#fff;border-radius:11px;padding:13px 16px;margin-top:18px;display:flex;align-items:center;gap:9px;font-size:13px;min-height:49px}.guest-strip span:nth-child(2){font-size:12px;letter-spacing:.07em;color:#e5b75b;font-weight:800;white-space:nowrap}.guest-strip strong{font-size:15px;letter-spacing:.02em;overflow-wrap:anywhere}.guest-pencil{font-size:18px;color:#e8b74f}.guest-star{margin-left:auto;color:#d1a651}.closing-note{display:flex;gap:16px;margin-top:20px;align-items:stretch}.gold-rule{width:3px;background:var(--gold);flex-shrink:0;border-radius:2px}.closing-note p{font:italic 16px/1.6 Georgia,'Times New Roman',serif;margin:0;color:#33435a}.closing-note p span{display:inline-block;margin-top:5px;color:#a16437;font-weight:700}
+.map-title-row{display:flex;align-items:center;justify-content:space-between;gap:15px;padding-top:2px;margin-bottom:19px}.small-kicker{font-size:11px;color:#a16739;margin-bottom:7px}.map-title-row h2{font-size:21px;letter-spacing:-.04em;font-family:'Manrope',Arial,sans-serif;margin:0;line-height:1.25}.map-title-icon{display:grid;place-items:center;width:37px;height:37px;border:1px solid #e6d0ad;border-radius:50%;font-size:26px;color:#c33548}.map-tabs{background:#e7dbc6;padding:4px;border-radius:12px;display:flex;gap:3px;margin-bottom:12px}.map-tab{border:0;border-radius:9px;padding:12px 17px;flex:1;font-weight:800;font-size:13px;color:#596272;background:transparent;transition:background .2s,color .2s,transform .2s}.map-tab.active{background:var(--navy);color:white;box-shadow:0 2px 4px #051b3630}.map-tab:hover:not(.active){background:#f1e7d6;color:var(--navy)}.campus-map{background:#fefefe;border:1px solid #d5c5ad;border-radius:14px;padding:7px;position:relative;box-shadow:0 2px 8px #8a744c13;overflow:hidden}.campus-map img{width:100%;aspect-ratio:900/500;object-fit:contain}.map-badge{position:absolute;top:15px;right:15px;background:var(--navy);border:1px solid #ffffff77;color:white;padding:8px 11px;border-radius:8px;font-size:10px;font-weight:800;letter-spacing:.04em;box-shadow:0 3px 9px #0003;display:flex;align-items:center;gap:7px}.badge-live{height:7px;width:7px;background:#ffca62;border-radius:100%;box-shadow:0 0 0 3px #ffffff22}.map-disclaimer{font-size:11px;line-height:1.4;color:#7d8190;margin:10px 3px 0}.meeting-panel{min-height:300px}.meeting-illustration{height:100%;min-height:300px;background:radial-gradient(circle at 50% 44%,#345a8c 0,#122d53 57%,#0c1e39 100%);border:1px solid #355575;border-radius:14px;padding:35px 15px;text-align:center;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center}.meeting-big-icon{font-size:65px;margin-bottom:9px}.meeting-sup{color:#e3b764;font-size:12px;letter-spacing:.17em;font-weight:800}.meeting-illustration h3{font:800 clamp(22px,2.4vw,34px)/1.2 'Manrope',Arial,sans-serif;letter-spacing:-.04em;margin:11px 0}.meeting-illustration p{color:#d7e1ef;margin:0;font-size:13px}.meeting-meta{display:flex;gap:12px;align-items:center;margin-top:25px;background:#ffffff15;border:1px solid #ffffff22;border-radius:35px;padding:11px 18px;font-size:12px}.meeting-meta strong{color:#ffe0a2}
+.travel-info{background:#efe3cb;border:1px solid #e2d4ba;border-radius:15px;padding:18px;margin-top:21px}.travel-heading{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:800;letter-spacing:.045em;padding-bottom:12px;border-bottom:1px solid #ddcba9}.travel-heading-icon{display:inline-grid;place-items:center;width:25px;height:25px;border-radius:7px;background:#d5aa62;color:white;font-size:19px}.travel-row{display:flex;gap:10px;font-size:14px;line-height:1.55;color:#394354;padding-top:13px}.travel-row strong{color:#172b49}.travel-dot{height:7px;width:7px;border:2px solid var(--red);border-radius:50%;margin-top:8px;flex-shrink:0}.travel-advice{border-top:1px dashed #d4bd98;margin-top:16px;padding-top:13px;display:flex;gap:8px;font-size:12px;line-height:1.5;font-weight:800;color:#a35b38}.travel-advice span:first-child{color:#cf953b}
+.action-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:19px}.action-button{min-height:51px;background:#122541;color:white;border:1px solid #122541;border-radius:11px;display:flex;align-items:center;justify-content:center;gap:9px;padding:9px 12px;font-size:13px;letter-spacing:.01em;font-weight:800;transition:transform .2s,background .2s,box-shadow .2s;text-align:center}.action-button:hover{background:#233e65;transform:translateY(-2px);box-shadow:0 4px 12px #233e652f}.action-button span{font-size:19px;color:#edbe71}.primary-action{background:#c62c43;border-color:#c62c43}.primary-action:hover{background:#b11e36}.primary-action span{color:#fff}.wide-action{grid-column:span 2}.barcode-card{margin-top:21px}.barcode{height:64px;width:100%;background:repeating-linear-gradient(90deg,#12223a 0 2px,transparent 2px 4px,#12223a 4px 5px,transparent 5px 8px,#12223a 8px 12px,transparent 12px 14px,#12223a 14px 16px,transparent 16px 20px,#12223a 20px 22px,transparent 22px 25px,#12223a 25px 26px,transparent 26px 29px);opacity:.94}.barcode-caption{display:flex;justify-content:space-between;gap:8px;font:12px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;color:#636e7f;letter-spacing:.075em;margin-top:8px}.ticket-bottom{border-top:1px solid #dccbb1;margin:0 36px;padding:16px 0;display:flex;justify-content:space-between;gap:15px;color:#9f856c;font-size:10px;font-weight:800;letter-spacing:.17em}.site-footer{text-align:center;color:#8babc9;margin-top:25px;font-size:11px;font-weight:700;letter-spacing:.22em}.site-footer span{color:#d3a650;padding:0 8px}
+.link-builder{background:#f6efdf;border-radius:18px;display:grid;grid-template-columns:1fr 1fr;gap:28px;padding:26px 30px;margin-top:28px;color:var(--navy)}.builder-copy h2{font-size:21px;margin:7px 0;font-family:'Manrope',Arial,sans-serif}.builder-copy p{margin:0;color:#697185;font-size:14px;line-height:1.5}#guest-form label{display:block;font-weight:800;font-size:12px;margin-bottom:8px}.builder-controls{display:flex;gap:8px}.builder-controls input{border:1px solid #cdbd9e;background:#fffdf8;border-radius:8px;padding:12px;width:100%;min-width:0}.builder-controls button{border:0;border-radius:8px;background:var(--red);color:#fff;font-size:12px;font-weight:800;padding:10px 15px;white-space:nowrap}#builder-output{display:block;font-size:12px;margin-top:8px;color:#356147;word-break:break-all}.toast{position:fixed;left:50%;bottom:25px;transform:translate(-50%,30px);background:#172f4f;border:1px solid #55728c;color:white;padding:13px 18px;border-radius:12px;box-shadow:0 8px 35px #0005;font-size:14px;font-weight:700;pointer-events:none;opacity:0;transition:.25s;z-index:5;max-width:calc(100% - 28px);text-align:center}.toast.visible{opacity:1;transform:translate(-50%,0)}
+@keyframes planeDrift{0%,100%{transform:translate(-5px,-1px) rotate(-4deg)}50%{transform:translate(6px,-3px) rotate(2deg)}}
+@media(max-width:1150px){.app-shell{padding:30px 22px}.ticket-grid{grid-template-columns:1fr 1fr}.ticket-left,.ticket-right{padding:27px 25px}.brand-name{font-size:17px}.brand-school{font-size:15px}.portrait-frame{width:103px;height:131px}.passenger-area{gap:17px}.passenger-copy h1{font-size:30px}.achievement-pill{font-size:9px}.detail strong{font-size:15px}.details-grid{gap:21px 9px}.route-stop strong{font-size:46px}.map-title-row h2{font-size:18px}.travel-info{padding:14px}.action-button{font-size:12px}}
+@media(max-width:850px){.app-shell{padding:24px 14px}.eyebrow-row{font-size:9px;letter-spacing:.1em;gap:8px}.eyebrow-row span:nth-of-type(4){display:none}.ticket-header{min-height:67px;padding:15px 20px}.brand-name{font-size:16px}.brand-school{font-size:14px}.header-year{display:none}.header-class{font-size:12px}.ticket-grid{grid-template-columns:1fr}.ticket-left{border-right:0;border-bottom:2px dashed #d7c9af;padding:29px 25px}.ticket-left:before,.ticket-left:after{top:auto;bottom:-13px}.ticket-left:before{left:-12px;right:auto}.ticket-left:after{right:-12px}.ticket-right{padding:29px 25px}.passenger-copy h1{font-size:clamp(29px,6vw,41px)}.portrait-frame{width:123px;height:146px}.route-stop strong{font-size:52px}.detail strong{font-size:17px}.campus-map img{max-height:390px}.ticket-bottom{margin:0 25px}.link-builder{grid-template-columns:1fr}}
+@media(max-width:500px){.app-shell{padding:12px 9px 18px}.eyebrow-row{margin-bottom:15px;font-size:9px}.eyebrow-sparkle{display:none}.boarding-pass{border-radius:17px}.ticket-header{gap:7px;padding:11px 16px}.brand-lockup{gap:7px}.brand-mark{width:30px;height:34px;border-radius:5px}.brand-mark span{font-size:14px}.brand-name{font-size:12px;gap:5px}.brand-school{font-size:11px}.brand-separator{display:none}.brand-icon{font-size:18px}.header-class{font-size:9px}.ticket-left,.ticket-right{padding:21px 17px}.portrait-frame{width:99px;height:127px;border-width:3px;border-radius:13px}.passenger-area{gap:12px}.section-kicker{font-size:10px}.passenger-copy h1{font-size:clamp(22px,6.3vw,31px);margin:7px 0}.university{font-size:11px;line-height:1.45}.achievement-pill{font-size:8px;padding:6px 8px;gap:3px}.flight-route{margin:26px 0 21px}.route-stop strong{font-size:43px}.route-stop span{font-size:10px}.flying-plane{font-size:22px;padding:0 7px}.details-grid{gap:18px 10px;padding:21px 0}.detail-label{font-size:9px;letter-spacing:.05em}.detail strong{font-size:clamp(11px,3.8vw,16px)}.location-title strong{font-size:15px}.message-card p{font-size:13px}.timer-numbers span{font-size:25px}.timer-numbers{gap:5px}.timer-numbers small{font-size:9px;margin-right:2px}.guest-strip{gap:6px;padding:12px 10px}.guest-strip strong{font-size:13px}.guest-strip span:nth-child(2){font-size:10px}.closing-note p{font-size:14px}.map-title-row h2{font-size:17px}.map-tab{font-size:12px;padding:10px 8px}.map-badge{font-size:8px;padding:6px;top:10px;right:10px}.travel-row{font-size:13px}.action-button{font-size:11px;min-height:46px;padding:7px}.barcode{height:48px}.barcode-caption{font-size:9px}.ticket-bottom{margin:0 17px;flex-direction:column;text-align:center;gap:4px;padding:13px 0;font-size:8px}.link-builder{padding:20px 17px}.builder-controls{flex-direction:column}.builder-controls button{min-height:42px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+/* Uploaded original photos and interactive wayfinding map — 20 Nov 2026 */
+.brand-mark{position:relative;overflow:hidden;clip-path:none;width:48px;height:48px;border-radius:12px;background:#fff;flex:none;box-shadow:0 3px 12px #7b132c35}
+.brand-mark img{position:absolute;display:block;max-width:none;width:102px;height:auto;left:-28px;top:-8px}
+.portrait-frame{width:145px;height:145px;border-radius:50%;border:3px solid #fff;background:#fff;box-shadow:0 0 0 2px var(--navy),0 4px 0 #d9caaa}
+.portrait-frame img{width:100%;height:100%;object-fit:contain;border-radius:50%}
+.portrait-corner{display:none}
+.route-selector{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;margin:0 0 11px}
+.route-option{border:1px solid #d9c6a9;background:#fef7e9;border-radius:9px;padding:10px 7px;min-height:41px;font-size:12px;font-weight:800;color:#4c5970;display:flex;align-items:center;justify-content:center;gap:6px;transition:background .2s,color .2s,transform .2s,border-color .2s}
+.route-option:hover{transform:translateY(-1px);border-color:#a9b8c7}
+.route-option.active{background:var(--navy);border-color:var(--navy);color:#fff}
+.route-option.route-one-option.active{background:#1368b3;border-color:#1368b3}
+.route-option.route-three-option.active{background:#bd6b20;border-color:#bd6b20}
+.route-swatch{width:9px;height:9px;border-radius:50%;flex-shrink:0;border:1px solid #fff6}
+.gate-one-color{background:#1176d5}.gate-three-color{background:#ee962e}
+.map-with-routes{isolation:isolate;position:relative}
+.map-with-routes>img{width:100%;height:auto;aspect-ratio:2048/974;object-fit:contain;max-height:none}
+.routes-overlay{position:absolute;inset:7px;width:calc(100% - 14px);height:calc(100% - 14px);pointer-events:none;overflow:visible}
+.route-track{transition:opacity .3s ease}
+.route-halo{fill:none;stroke:#fff;stroke-width:23;stroke-linecap:round;stroke-linejoin:round;opacity:.9}
+.route-stroke{fill:none;stroke-width:13;stroke-linecap:round;stroke-linejoin:round;opacity:.95}
+.route-stroke-one{stroke:#1678d1}.route-stroke-three{stroke:#d9842e}
+.route-dashes{fill:none;stroke:#fff;stroke-width:5;stroke-linecap:round;stroke-dasharray:14 18;stroke-dashoffset:0;animation:route-flow 1.05s linear infinite}
+.route-dashes-three{animation-duration:1.35s}
+.gate-start{stroke:#fff;stroke-width:6;filter:drop-shadow(0 2px 4px #10233a8a)}
+.gate-start-one{fill:#1176d5}.gate-start-three{fill:#dc8029}
+.destination-pulse{fill:#cf28403b;stroke:#cf2840;stroke-width:4;transform-box:fill-box;transform-origin:center;animation:destination-ping 2s ease-out infinite}
+.map-with-routes[data-selected="gate1"] .route-gate3,.map-with-routes[data-selected="gate3"] .route-gate1{opacity:0}
+.map-with-routes .map-badge{left:12px;right:auto;top:12px;background:#fffdf9;color:var(--navy);border:1px solid #c4cdd7;font-size:10px;box-shadow:0 3px 10px #2b42542e}
+.map-with-routes .badge-live{background:#ce2b41;box-shadow:0 0 0 3px #e7c6b7}
+.map-zoom-button,.map-close-button{position:absolute;z-index:3;border:1px solid #ffffffb0;border-radius:9px;background:#102844;color:white;box-shadow:0 3px 9px #001a3750;font-size:11px;font-weight:800;padding:7px 10px;transition:background .2s}
+.map-zoom-button{right:13px;bottom:13px}.map-zoom-button:hover,.map-close-button:hover{background:#cd2b43}
+.map-close-button{top:12px;right:12px;font-size:17px;padding:4px 11px}
+.route-description{background:#f4e9d5;border:1px solid #e0cfb4;border-radius:9px;padding:10px 12px;margin:11px 0 0;font-size:13px;line-height:1.5;color:#25364f;font-weight:700}
+.map-disclaimer{font-size:11px;margin-top:8px;color:#737d8b}
+.map-backdrop{position:fixed;inset:0;z-index:60;background:#061426df;backdrop-filter:blur(8px)}
+.boarding-pass.map-dialog-open{overflow:visible}
+body.map-expanded{overflow:hidden}
+.map-with-routes.expanded{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:70;width:min(96vw,1600px,185vh);max-width:none;border:5px solid #fff;border-radius:17px;padding:6px;background:#fff;box-shadow:0 20px 80px #0009}
+.map-with-routes.expanded .map-zoom-button{display:none}
+.map-with-routes.expanded .map-close-button{display:block!important}
+.map-with-routes.expanded .map-badge{font-size:12px;padding:9px 13px}
+@keyframes route-flow{to{stroke-dashoffset:-32}}
+@keyframes destination-ping{0%{transform:scale(.7);opacity:.9}75%,100%{transform:scale(2.6);opacity:0}}
+@media(max-width:1150px){.portrait-frame{width:113px;height:113px}.brand-mark{width:44px;height:44px}.brand-mark img{width:94px;left:-26px;top:-7px}.route-option{font-size:11px;padding:8px 4px}}
+@media(max-width:850px){.portrait-frame{width:126px;height:126px}.route-option{font-size:12px}}
+@media(max-width:500px){.brand-mark{width:34px;height:35px;border-radius:7px}.brand-mark img{width:73px;left:-20px;top:-6px}.portrait-frame{width:98px;height:98px;border-width:2px}.route-selector{gap:4px}.route-option{font-size:10px;gap:4px;padding:7px 3px;min-height:36px}.route-swatch{width:7px;height:7px}.map-with-routes .map-badge{font-size:7px;top:9px;left:9px;padding:5px 6px}.map-zoom-button{font-size:9px;right:10px;bottom:10px;padding:4px 7px}.map-zoom-button span{display:none}.route-description{font-size:12px;padding:9px}}
+@media(prefers-reduced-motion:reduce){.route-dashes{animation:none}.moving-arrow{display:none}.destination-pulse{animation:none;opacity:.35}}
+
+/* Chuẩn hóa toàn bộ font và cách hiển thị dấu tiếng Việt */
+:root,body,button,input,a{font-family:'Be Vietnam Pro',Arial,sans-serif}
+.brand-name,.passenger-copy h1,.route-stop strong,.detail strong,.location-title strong,.map-title-row h2,.meeting-illustration h3,.builder-copy h2,.header-class,.barcode-caption,.timer-numbers,.closing-note p{font-family:'Be Vietnam Pro',Arial,sans-serif}
+.brand-name,.passenger-copy h1,.map-title-row h2,.location-title strong{letter-spacing:-.02em}
+.section-kicker,.detail-label,.achievement-pill,.eyebrow-row,.countdown-title,.header-class,.ticket-bottom,.site-footer{letter-spacing:.035em}
+.closing-note p{font-size:15px;line-height:1.7;font-style:italic}
+.route-destination strong{font-size:clamp(39px,3.7vw,50px);letter-spacing:-.05em}
+.route-destination span{max-width:230px;line-height:1.45;font-size:12px;letter-spacing:0}
+.route-stop:not(.route-destination) span{letter-spacing:0}
+.details-grid .detail strong{white-space:normal;overflow-wrap:break-word;line-height:1.35}
+.barcode-caption{font-size:11px;letter-spacing:0}
+.header-class{white-space:nowrap;font-size:13px}
+.map-street-label text,.map-gate-label text{font-family:'Be Vietnam Pro',Arial,sans-serif;paint-order:stroke;letter-spacing:0}
+.road-guide{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:11px}
+.road-guide-item{display:flex;gap:9px;align-items:center;border:1px solid #bbccd9;background:#eaf3f8;border-radius:10px;padding:11px 10px;color:#133559;min-width:0}
+.road-guide-item:nth-child(2){border-color:#e8c39a;background:#fff0da;color:#743d17}
+.road-guide-mark{display:block;width:6px;height:33px;border-radius:5px;flex:none}
+.road-guide-blue{background:#1678d1}.road-guide-orange{background:#d9842e}
+.road-guide-item strong{display:block;font-size:10px;line-height:1.4;letter-spacing:.015em}
+.road-guide-item small{display:block;margin-top:3px;font-size:12px;font-weight:700}
+.gate-warning{margin-top:11px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start;border:1px solid #e6ac8d;background:#fff0e4;color:#853f22;border-radius:11px}
+.gate-warning>span{font-size:21px;line-height:1.2;color:#bd6427}
+.gate-warning p{margin:0;font-size:13px;line-height:1.6}
+.gate-warning strong{color:#79351d}
+.map-disclaimer{line-height:1.55}
+@media(max-width:1150px){.brand-name{font-size:15px}.brand-school{font-size:13px}.route-destination strong{font-size:39px}.route-destination span{max-width:170px;font-size:11px}.details-grid .detail strong{font-size:14px}}
+@media(max-width:850px){.route-destination strong{font-size:45px}.route-destination span{max-width:220px;font-size:11px}.details-grid .detail strong{font-size:16px}}
+@media(max-width:500px){.brand-school{display:none}.brand-name{font-size:11px;gap:4px}.header-class{font-size:9px}.route-destination strong{font-size:36px}.route-destination span{max-width:150px;font-size:10px}.details-grid .detail strong{font-size:12px}.road-guide{grid-template-columns:1fr}.gate-warning p{font-size:12px}.closing-note p{font-size:13px}.barcode-caption{font-size:9px}}
+
+/* ================================================================
+   BÁCH KHOA PREMIUM · NAVY / SAPPHIRE / GOLD
+   Distinct airline-ticket redesign, preserving the authentic assets.
+   ================================================================ */
+:root{
+  --navy:#0c2548;
+  --navy-dark:#06172f;
+  --red:#1267af;
+  --gold:#d3a44e;
+  --paper:#ffffff;
+  --paper-warm:#f1f5fb;
+  --cream-white:#fffdf8;
+  --muted:#5c7089;
+  --border:#dbe5ef;
+}
+body{
+  background:
+    radial-gradient(ellipse 50% 45% at 12% 13%,#1b4f8d88,transparent 75%),
+    radial-gradient(ellipse 50% 45% at 90% 65%,#0f518166,transparent 78%),
+    linear-gradient(145deg,#091d3a 5%,#051328 55%,#0a2548 100%);
+}
+.sky:before{opacity:.17}.sky:after{opacity:.11}
+.app-shell{max-width:1550px;padding-top:34px}
+.eyebrow-row{color:#c8d6eb;letter-spacing:.11em;font-weight:700;font-size:12px}
+.eyebrow-sparkle{color:#e6bd69;font-size:16px}
+.eyebrow-line{max-width:110px;background:linear-gradient(90deg,transparent,#bbd3ef88)}
+.boarding-pass{
+  border-radius:25px;
+  border:1px solid #b4c9e133;
+  background:#fff;
+  box-shadow:0 36px 100px #020e2459,0 2px 0 #fff7 inset;
+}
+.ticket-header{
+  min-height:98px;
+  padding:19px 37px;
+  background:linear-gradient(112deg,#081c39,#0b3364 51%,#0c568f 100%);
+  border-bottom:3px solid #d5ad5f;
+  position:relative;
+  overflow:hidden;
+}
+.ticket-header:after{
+  content:'';position:absolute;right:12%;top:-65px;width:260px;height:220px;
+  border-radius:50%;border:1px solid #ffffff20;box-shadow:0 0 0 36px #ffffff07,0 0 0 75px #ffffff05;
+  pointer-events:none;
+}
+.brand-lockup,.header-right{position:relative;z-index:1}
+.brand-mark{
+  width:55px;height:55px;border-radius:14px;
+  box-shadow:0 6px 18px #0005,0 0 0 1px #ffffff55;
+}
+.brand-mark img{width:118px;left:-33px;top:-10px}
+.brand-name{font-size:21px;letter-spacing:-.025em;gap:11px}
+.brand-school{font-size:15px;color:#c7e5ff;font-weight:700;letter-spacing:.015em}
+.brand-separator{color:#d5ad5f;opacity:1}
+.brand-icon{color:#e9c277;font-size:25px}
+.header-year{border-color:#dfbb7d7d;background:#ffffff12;color:#f1d197;font-size:14px;padding:8px 12px}
+.header-class{font-size:13px;letter-spacing:.08em;font-weight:800}
+.ticket-meta-bar{
+  display:flex;align-items:center;justify-content:space-between;gap:15px;
+  padding:12px 37px;
+  background:#f9f3e7;
+  border-bottom:1px solid #e6d9bc;
+  color:#4b5d77;font-size:12px;font-weight:800;letter-spacing:.075em;
+}
+.meta-brand{color:#164474}.meta-diamond{color:#be8d37;margin-right:5px}
+.meta-center{color:#9b7230}.meta-date span{color:#c4a674;margin:0 8px}
+.ticket-grid{grid-template-columns:minmax(0,1.01fr) minmax(0,.99fr)}
+.ticket-left{
+  background:linear-gradient(145deg,#ffffff 0%,#fdfefe 55%,#f8fbff 100%);
+  border-right:2px dashed #b8cce2;
+  padding:38px 39px 35px;
+}
+.ticket-right{background:#f6f9fe;padding:38px 37px 33px}
+.ticket-left:before,.ticket-left:after{background:#0d2e57;box-shadow:0 0 0 2px #f0f4fa}
+.passenger-area{gap:24px;align-items:center}
+.portrait-frame{
+  width:137px;height:137px;
+  border:5px solid #fff;
+  box-shadow:0 0 0 2px #b88b3e,0 0 0 7px #e6d9bc88,0 12px 28px #0b2a512b;
+}
+.section-kicker{color:#a27938;font-size:12px;letter-spacing:.09em}
+.kicker-dot{background:#d1a350}
+.passenger-copy h1{font-size:clamp(29px,2.8vw,43px);line-height:1.12;margin:11px 0 12px;color:#09254b;font-weight:900}
+.passenger-copy h1 span{color:#1466ac}
+.university{font-size:13px;color:#60748c}
+.achievement-pill{
+  background:#f7ecd1;color:#7b5b22;border:1px solid #e2ca95;
+  font-size:11px;letter-spacing:.035em;padding:10px 13px;line-height:1.35;
+}
+.achievement-pill span:first-child{color:#be8d35}
+.flight-route{
+  background:#f0f6fe;border:1px solid #deebf7;border-radius:15px;
+  padding:22px 19px;margin:32px 0 22px;gap:12px;
+}
+.route-stop strong{font-size:clamp(35px,3.2vw,51px);color:#0b315f;letter-spacing:-.045em}
+.route-destination strong{color:#1266ae}
+.route-stop span,.route-destination span{font-size:12px;color:#536d89;line-height:1.5;letter-spacing:.01em}
+.flight-path{min-width:43px}
+.path-line{border-color:#ba934c;border-top-width:2px}
+.flying-plane{background:#f0f6fe;color:#c59746}
+.details-grid{
+  background:#fff;border:1px solid #dce6f2;border-radius:14px;
+  padding:22px 18px;gap:20px 13px;
+  box-shadow:0 6px 24px #12386108;
+}
+.detail{padding-left:11px;border-left:2px solid #e8d4a5}
+.detail-label{font-size:11px;color:#617690;letter-spacing:.04em;line-height:1.35}
+.detail strong{font-size:16px;color:#102e55;line-height:1.45}
+.location-block{padding:23px 2px 17px}
+.location-title strong{color:#14375e;font-size:17px}
+.location-icon{color:#b88a35}
+.location-block p{color:#64768d;font-size:13px}
+.message-card{
+  background:linear-gradient(105deg,#fff7e9,#f8eddb);
+  border:1px solid #edd9b5;border-left:4px solid #d6aa5b;
+  box-shadow:0 6px 18px #8c672311;
+}
+.message-quote{color:#d0a151}
+.message-card p{color:#304767;font-size:15px}
+.countdown{
+  background:linear-gradient(115deg,#09254b,#0c4074);
+  border:1px solid #285584;
+  border-radius:14px;box-shadow:0 5px 0 #d4e2f1;
+  padding:20px 10px;
+}
+.countdown-title{font-size:12px;letter-spacing:.08em;color:#f4d594}
+.timer-numbers span{font-size:31px;color:#fff}
+.timer-numbers small{font-size:12px;color:#bdcee6}
+.guest-strip{
+  background:#ffffff;color:#102d53;
+  border:1.5px solid #d2ac63;border-radius:12px;
+  box-shadow:inset 0 0 0 4px #fbf6eb;
+  padding:15px 16px;min-height:57px;
+}
+.guest-strip span:nth-child(2),.guest-pencil,.guest-star{color:#a97927}
+.guest-strip strong{color:#112f55;font-size:16px}
+.gold-rule{background:#c99c4f}
+.closing-note p{font-family:'Be Vietnam Pro',Arial,sans-serif;color:#405a77;font-size:15px}
+.closing-note p span{color:#a5762d}
+.small-kicker{color:#a4742f;font-size:12px}
+.map-title-row h2{font-size:23px;color:#0a2d58}
+.map-title-icon{border-color:#d5b578;background:#fff7e8;color:#ba8d41}
+.map-tabs{background:#e4edf7;border:1px solid #d9e4f0}
+.map-tab{font-size:13px;color:#476581}
+.map-tab.active{background:#0f3969;box-shadow:0 4px 9px #14365c29}
+.map-tab:hover:not(.active){background:#fff;color:#163a63}
+.route-option{background:#fff;border-color:#d4e0ed;color:#375779;font-size:12px;min-height:45px}
+.route-option.active{background:#103861;border-color:#103861}
+.route-option.route-one-option.active{background:#1167b3}
+.route-option.route-three-option.active{background:#a46722}
+.campus-map{background:white;border:1px solid #ccdced;border-radius:14px;box-shadow:0 10px 28px #153a6513}
+.road-guide-item{background:#e9f2ff;border-color:#c7dbee;padding:13px}
+.road-guide-item:nth-child(2){background:#fff3df;border-color:#edd7ac}
+.road-guide-item strong{font-size:11px}
+.road-guide-item small{font-size:13px}
+.route-description{background:#eaf3fc;border-color:#c9ddf1;color:#24476c;font-size:13px;padding:13px}
+.gate-warning{background:#fff7e9;border-color:#e7cb94;color:#755328}
+.gate-warning strong{color:#774b20}
+.travel-info{background:#fff;border:1px solid #dce6f2;box-shadow:0 6px 22px #173a610c}
+.travel-heading{color:#173a65;border-bottom-color:#d9e5f2}
+.travel-heading-icon{background:#c7a05d}
+.travel-dot{border-color:#d4a75f}
+.travel-row{font-size:14px;color:#3b536f}
+.travel-row strong{color:#14345d}
+.travel-advice{color:#9b7134;border-color:#e3d3b3}
+.action-button{background:#0c2e57;border-color:#0c2e57;font-size:13px;border-radius:10px}
+.action-button:hover{background:#174e82}
+.action-button span{color:#f1c579}
+.primary-action{background:linear-gradient(105deg,#0f6bb1,#0b4e92);border-color:#1264a9}
+.primary-action:hover{background:#08447d}
+.primary-action span{color:#fff}
+.barcode{opacity:.88}
+.barcode-caption{color:#58718b}
+.ticket-bottom{color:#57718c}
+.ticket-bottom span:last-child{color:#a47b3d}
+.link-builder{background:#fff;border:1px solid #dae7f3}
+.builder-controls button{background:#0d609f}
+.toast{background:#0c2e57}
+
+@media(max-width:1150px){
+  .ticket-header{padding:16px 25px}.ticket-meta-bar{padding:12px 25px}
+  .ticket-left,.ticket-right{padding:29px 25px}
+  .brand-name{font-size:17px}.brand-school{font-size:13px}
+  .portrait-frame{width:116px;height:116px}
+  .passenger-copy h1{font-size:33px}
+  .route-stop strong{font-size:42px}
+  .route-destination strong{font-size:39px}
+  .detail strong{font-size:14px}
+}
+@media(max-width:850px){
+  .ticket-grid{grid-template-columns:1fr}
+  .ticket-left{border-right:0;border-bottom:2px dashed #b8cce2}
+  .ticket-meta-bar{font-size:11px;gap:10px}
+  .meta-center{display:none}
+  .portrait-frame{width:129px;height:129px}
+  .passenger-copy h1{font-size:38px}
+  .route-stop strong{font-size:48px}
+  .route-destination strong{font-size:46px}
+  .detail strong{font-size:16px}
+}
+@media(max-width:500px){
+  .app-shell{padding:13px 9px 20px}
+  .boarding-pass{border-radius:17px}
+  .ticket-header{min-height:74px;padding:13px 15px}
+  .brand-mark{width:38px;height:38px;border-radius:8px}
+  .brand-mark img{width:81px;left:-22px;top:-7px}
+  .brand-name{font-size:12px}.brand-school{display:none}
+  .header-class{font-size:10px}
+  .ticket-meta-bar{padding:10px 16px;font-size:10px;letter-spacing:0}
+  .meta-date span{margin:0 3px}
+  .ticket-left,.ticket-right{padding:24px 17px}
+  .portrait-frame{width:99px;height:99px;box-shadow:0 0 0 2px #b88b3e,0 0 0 4px #e6d9bc88}
+  .passenger-area{gap:14px}
+  .passenger-copy h1{font-size:clamp(23px,6.2vw,30px)}
+  .university{font-size:11px}
+  .achievement-pill{font-size:9px;padding:7px 8px}
+  .flight-route{padding:16px 12px;gap:7px;margin:23px 0 19px}
+  .route-stop strong{font-size:36px}
+  .route-destination strong{font-size:35px}
+  .route-stop span,.route-destination span{font-size:10px}
+  .flight-path{min-width:18px}
+  .details-grid{padding:18px 9px;gap:18px 8px}
+  .detail{padding-left:7px}
+  .detail-label{font-size:10px}
+  .detail strong{font-size:12px}
+  .message-card p{font-size:13px}
+  .countdown-title{font-size:11px}
+  .timer-numbers span{font-size:25px}
+  .timer-numbers small{font-size:10px}
+  .guest-strip strong{font-size:13px}
+  .map-title-row h2{font-size:20px}
+  .route-option{font-size:10px;min-height:40px}
+  .road-guide{grid-template-columns:1fr}
+  .gate-warning p,.route-description{font-size:12px}
+  .action-button{font-size:11px}
+}
+
+/* Chỉnh thông tin theo lịch chính thức · 21/11/2026 */
+.portrait-frame{display:grid;place-items:center;isolation:isolate}
+.portrait-frame img{
+  position:absolute;top:50%;left:50%;width:110%;height:110%;max-width:none;
+  transform:translate(-50%,-50%);object-fit:cover;object-position:center center;
+}
+.passenger-copy h1{margin-bottom:7px}
+.contact-link{
+  display:inline-flex;align-items:center;gap:9px;margin:3px 0 13px;
+  padding:8px 12px;border-radius:100px;border:1px solid #d8e4f0;
+  background:#eaf3fe;color:#114e85;font-size:14px;font-weight:800;
+  transition:background .2s,border-color .2s;
+}
+.contact-link:hover{background:#d9ebfc;border-color:#b9d1ea}
+.contact-link svg{width:17px;height:17px;flex-shrink:0}
+.passenger-copy .university{margin-bottom:10px}
+.achievement-pill{gap:5px}
+.detail-schedule{border-left-color:#c5a058}
+.detail-schedule .detail-label{font-size:11px}
+.detail-ceremony strong{color:#0d67ad}
+.location-icon{display:inline-flex;align-items:center;justify-content:center;width:27px;height:27px;flex-shrink:0}
+.location-icon svg{width:23px;height:23px}
+.map-title-icon svg{width:22px;height:22px}
+.photo-meeting{
+  background:#eff6fe;border:1px solid #d3e4f5;border-radius:12px;
+  padding:14px 17px;margin:0 0 19px;color:#24476a;
+}
+.photo-meeting-title{display:flex;align-items:center;gap:9px;font-weight:800;font-size:12px;letter-spacing:.04em;color:#0e5087}
+.photo-meeting-title svg{width:19px;height:19px;flex-shrink:0}
+.photo-meeting p{font-size:13px;line-height:1.6;margin:8px 0 0 28px}
+.photo-meeting a{font-weight:800;color:#095b9c;text-decoration:underline;text-underline-offset:2px}
+.closing-signoff{font-style:italic}
+.closing-signoff strong{font-weight:800}
+.meeting-photo-note{margin-top:12px!important;color:#e5cf9d!important;font-size:13px!important}
+.travel-advice{font-size:13px}
+.guest-strip{justify-content:flex-start}
+@media(max-width:500px){
+  .contact-link{font-size:12px;padding:6px 9px;gap:6px;margin-bottom:10px}
+  .contact-link svg{width:15px;height:15px}
+  .details-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .detail-schedule{
+    grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;
+    gap:12px;border-left:0;border-top:1px solid #e3e9f0;padding:13px 6px 0;
+  }
+  .detail-schedule .detail-label{font-size:10px;margin:0}
+  .detail-schedule strong{font-size:13px;text-align:right;white-space:nowrap}
+  .photo-meeting{padding:12px 13px}
+  .photo-meeting p{font-size:12px;margin-left:0}
+}
+
+/* PIN điểm hẹn gắn với tọa độ trên chính ảnh bản đồ gốc */
+.pin-layer{position:absolute;inset:7px;z-index:2;pointer-events:none}
+.pin-layer.editing{pointer-events:auto;cursor:crosshair;background:#d4a04816;box-shadow:inset 0 0 0 3px #d4a04880;border-radius:7px}
+.pin-layer.editing:after{content:'CHẠM VÀO VỊ TRÍ HẸN';position:absolute;left:50%;bottom:18px;transform:translateX(-50%);background:#0e315e;color:white;padding:10px 14px;border:1px solid #f0c879;border-radius:100px;font-size:12px;font-weight:800;white-space:nowrap;box-shadow:0 5px 16px #001d4180;pointer-events:none}
+.meeting-pin{position:absolute;transform:translate(-50%,-100%);width:48px;height:48px;text-align:center;filter:drop-shadow(0 4px 7px #1b294e80);z-index:3}
+.pin-icon{font-size:39px;line-height:48px;display:block;position:relative;z-index:2;animation:pin-float 2.8s ease-in-out infinite}
+.pin-icon svg{display:block;width:40px;height:48px;margin:auto}
+.pin-pulse{position:absolute;left:50%;bottom:3px;width:22px;height:10px;border-radius:50%;background:#ffd26a90;transform:translateX(-50%);box-shadow:0 0 0 5px #f6ba3845;animation:pin-pulse 2.3s ease-out infinite}
+.pin-label{position:absolute;bottom:51px;left:50%;transform:translateX(-50%);min-width:max-content;max-width:250px;padding:8px 12px;border:2px solid #fff1c3;background:#092c58;color:#fff;border-radius:10px;font-size:13px;line-height:1.3;font-weight:800;white-space:normal;box-shadow:0 5px 13px #00193450}
+.pin-editor{background:#fff8ea;border:1px solid #e8c78b;border-radius:13px;padding:15px;margin-top:13px;color:#17345c}
+.pin-editor-heading{display:flex;flex-wrap:wrap;gap:4px 12px;justify-content:space-between;align-items:center;margin-bottom:12px}
+.pin-editor-heading strong{font-size:13px;color:#103e6f}
+.pin-editor-heading span{font-size:11px;color:#876d42}
+.pin-pick-button{width:100%;border:1px dashed #ad8d4b;border-radius:9px;padding:12px 11px;font-weight:800;color:#173c63;background:#fff;transition:background .2s}
+.pin-pick-button:hover,.pin-pick-button[aria-pressed="true"]{background:#e8f1ff}
+.pin-editor label{display:block;margin:13px 0 6px;font-size:12px;font-weight:800;color:#435674}
+.pin-editor input{width:100%;border:1px solid #d9c9a9;background:#fff;border-radius:9px;padding:12px 11px;color:#102e50;font-size:14px}
+.pin-editor-actions{display:grid;grid-template-columns:1fr auto;gap:8px;margin-top:10px}
+.pin-editor-actions button{border:0;border-radius:9px;padding:11px 13px;font-size:12px;font-weight:800}
+#pin-save-button{background:#0b578f;color:#fff}
+#pin-save-button:hover{background:#083d6d}
+#pin-clear-button{background:#f3e6d0;color:#765a31}
+#pin-share-output{display:block;margin-top:10px;overflow-wrap:anywhere;font-size:11px;line-height:1.5;color:#20517f}
+/* Nhạc nền: người xem chủ động bật, không phát có tiếng khi chưa tương tác. */
+.music-widget{position:fixed;right:18px;bottom:18px;z-index:110;display:flex;align-items:center;gap:12px;border:1px solid #d5ad6785;border-radius:100px;background:#0a284de9;backdrop-filter:blur(12px);box-shadow:0 9px 27px #00142c66;padding:6px 15px 6px 6px;color:#fff}
+.music-toggle{display:flex;align-items:center;gap:8px;border:0;border-radius:100px;background:#f7edd7;color:#123c66;font-weight:800;font-size:12px;padding:9px 14px;white-space:nowrap}
+.music-toggle[aria-pressed="true"]{background:#d4a64c;color:#061d3a}
+#music-symbol{font-size:18px;line-height:1}
+.music-volume{display:flex;align-items:center;gap:7px;color:#f7da9d;font-size:18px}
+.music-volume input{width:78px;accent-color:#d5a94f;cursor:pointer}
+@keyframes pin-pulse{0%{transform:translateX(-50%) scale(.75);opacity:.9}100%{transform:translateX(-50%) scale(1.9);opacity:.25}}
+@keyframes pin-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@media(max-width:500px){.music-widget{right:9px;bottom:10px;gap:6px;padding-right:9px}.music-toggle{padding:9px 11px}.music-volume input{width:53px}.pin-label{font-size:11px;max-width:165px;min-width:130px}.pin-editor-actions{grid-template-columns:1fr}.pin-editor-actions button{min-height:40px}}
+@media(prefers-reduced-motion:reduce){.pin-icon,.pin-pulse{animation:none}}
+
+/* Chỉ đường về PIN vàng, giao diện chỉ dẫn và bãi xe cập nhật. */
+.route-stroke-three{stroke:#1eac60}
+.gate-start-three{fill:#1eac60}
+.gate-three-color{background:#1eac60}
+.route-option.route-three-option.active{background:#137e48;border-color:#137e48}
+.road-guide-item:nth-child(2){background:#e2f7eb;border-color:#a5dec0;color:#156840}
+.road-guide-green{background:#1eac60}
+.map-with-routes.no-pin .route-track{display:none}
+.pin-label{font-size:11px;padding:6px 9px;min-width:0;max-width:175px;bottom:48px;border-width:1.5px;letter-spacing:0}
+.pin-icon svg{width:35px;height:43px}
+.parking-guide{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 0}
+.parking-guide span{display:inline-flex;align-items:center;gap:7px;flex:1;min-width:180px;border:1px solid #c8dfeb;background:#edf5fa;color:#214b6c;border-radius:9px;padding:9px 10px;font-size:12px;font-weight:700}
+.parking-guide b{display:inline-grid;place-items:center;background:#0b5688;color:#fff;width:22px;height:22px;border-radius:6px;font-size:15px}
+.parking-map-label text,.building-a5 text{font-family:'Be Vietnam Pro',Arial,sans-serif;paint-order:stroke}
+
+/* Tạo link riêng: xưng hô + mã viết tắt, tên người nhận vẫn giải mã được. */
+.builder-fields{display:grid;grid-template-columns:minmax(120px,160px) minmax(0,1fr);gap:10px}
+.builder-fields>div{min-width:0}
+.builder-fields label{font-size:12px;margin-bottom:7px}
+.builder-fields input,.builder-fields select{width:100%;min-height:45px;border:1px solid #c2d4e7;border-radius:9px;padding:10px 12px;background:#fff;color:#15365b;font:inherit;font-size:14px}
+.builder-fields select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,#557795 50%),linear-gradient(135deg,#557795 50%,transparent 50%);background-position:calc(100% - 17px) 20px,calc(100% - 12px) 20px;background-size:5px 5px;background-repeat:no-repeat;padding-right:29px}
+.builder-controls{margin-top:10px}
+.builder-controls button{width:100%;min-height:45px;background:#115b99;border-radius:9px;font-size:13px}
+.builder-code{margin-top:11px;display:flex;gap:7px;align-items:center;flex-wrap:wrap;color:#526c86;font-size:12px;font-weight:700}
+.builder-code strong{background:#e7f2ff;border:1px solid #bed6f2;color:#16446f;border-radius:7px;padding:5px 9px;letter-spacing:.06em;font-size:14px}
+.builder-code span{font-size:11px;font-weight:500;color:#6d7e90}
+
+@media(max-width:600px){
+  .app-shell{padding:12px 8px 16px}
+  .ticket-left,.ticket-right{padding:21px 15px}
+  .map-tabs .map-tab{min-height:44px;font-size:13px}
+  .route-selector{gap:6px}
+  .route-option{min-height:45px;font-size:11px}
+  .map-zoom-button{min-height:36px;padding:8px 11px;font-size:11px}
+  .map-zoom-button span{display:inline}
+  .parking-guide{flex-direction:column;gap:7px}
+  .parking-guide span{flex:auto;min-width:0}
+  .pin-label{font-size:10px;max-width:130px;bottom:44px;padding:5px 7px}
+  .builder-fields{grid-template-columns:1fr}
+  .builder-fields input,.builder-fields select{min-height:46px;font-size:16px}
+  .builder-code{align-items:flex-start}
+  .action-grid{grid-template-columns:1fr}
+  .wide-action{grid-column:1}
+  .action-button{min-height:46px;font-size:12px}
+  .map-with-routes.expanded{width:98vw;border-width:3px;padding:3px;border-radius:11px}
+}
+
+/* PIN vàng nhỏ gọn để không che tuyến đường; giữ hiệu ứng nổi và nhịp sáng. */
+.meeting-pin{width:29px;height:34px;filter:drop-shadow(0 2px 4px #17395d80)}
+.pin-icon{line-height:34px}
+.pin-icon svg{width:25px;height:32px}
+.pin-pulse{bottom:1px;width:13px;height:7px;box-shadow:0 0 0 3px #f6ba3845}
+.pin-label{bottom:33px;min-width:0;max-width:112px;padding:4px 7px;border-width:1px;border-radius:6px;font-size:10px;line-height:1.2;box-shadow:0 3px 7px #00193440}
+@media(max-width:600px){
+  .meeting-pin{width:27px;height:32px}
+  .pin-icon svg{width:23px;height:30px}
+  .pin-label{bottom:31px;max-width:100px;padding:3px 5px;font-size:9px}
+}
+
+/* Màn mở đầu lấy cảm hứng từ bảng khởi hành và tấm vé xé sân bay. */
+body.intro-active .app-shell{max-width:1010px;padding:clamp(16px,3vh,36px) 20px 26px}
+body.intro-active .eyebrow-row,body.intro-active .boarding-pass,body.intro-active .site-footer,body.intro-active .link-builder{display:none!important}
+body:not(.intro-active) .departure-intro{display:none!important}
+.departure-intro{max-width:940px;margin:auto;transition:opacity .55s ease,transform .55s ease;font-family:'Be Vietnam Pro',Arial,sans-serif}
+.departure-intro.is-opening{opacity:0;transform:translateY(-55px) scale(.97);pointer-events:none}
+.departure-board{background:#050609;color:#f9f5e9;border:7px solid #12213d;border-radius:33px;padding:27px 33px 34px;box-shadow:0 0 0 1px #31466c50,0 16px 50px #020a1c55,inset 0 0 20px #050608}
+.departure-board-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:25px;border-bottom:1px solid #293346}
+.departure-board-brand{display:flex;gap:16px;align-items:center;min-width:0}
+.departure-board-brand img{width:62px;height:62px;object-fit:contain;border-radius:12px;background:#fff;padding:4px;flex-shrink:0}
+.departure-board-brand>span{color:#f1b33e;font-size:28px;line-height:1}
+.departure-board-brand strong,.departure-board-vn{font:800 clamp(15px,2.5vw,27px)/1.1 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.2em;color:#efb646;white-space:nowrap}
+.departure-board-vn{font-size:clamp(14px,2.15vw,24px);letter-spacing:.17em}
+.departure-board-rows{padding-top:19px}
+.departure-board-row{display:grid;grid-template-columns:120px minmax(0,1fr) 20px;gap:15px;align-items:center;min-height:70px}
+.departure-row-label{font:500 18px/1.2 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.1em;color:#8590a5}
+.departure-tiles{display:flex;align-items:center;gap:5px;min-width:0}
+.flap-tile{position:relative;display:inline-grid;place-items:center;flex:0 0 clamp(24px,4vw,46px);height:59px;border-radius:7px;background:#1e2636;color:#f4f2ed;font:800 clamp(17px,2.5vw,31px)/1 ui-monospace,SFMono-Regular,Consolas,monospace;text-shadow:0 2px 1px #0007;box-shadow:0 2px 0 #080b14;animation:flap-in .65s backwards;transform-origin:center}
+.flap-tile:after{content:'';position:absolute;top:50%;left:0;right:0;border-top:1px solid #080b14a8;box-shadow:0 1px 0 #51617b33;pointer-events:none}
+.flap-tile.is-blank{color:transparent}
+.departure-status .flap-tile{color:#44dc8b;text-shadow:0 0 10px #34cb78aa}
+.departure-led{width:17px;height:17px;border-radius:50%;background:#38d47e;box-shadow:0 0 14px 5px #36d98455;animation:departure-led 2s ease-in-out infinite}
+.departure-invitation{--tear-height:145px;position:relative;margin:24px 8px 0;border-radius:34px;overflow:hidden;box-shadow:0 24px 55px #00102655}
+.departure-invitation:before,.departure-invitation:after{content:'';position:absolute;z-index:3;bottom:calc(var(--tear-height) - 20px);width:42px;height:42px;background:#09182e;border-radius:50%;pointer-events:none}
+.departure-invitation:before{left:-21px}.departure-invitation:after{right:-21px}
+.departure-invitation-main{min-height:390px;padding:38px 47px 30px;background:radial-gradient(circle at 23% 25%,#fffcf7 0%,transparent 55%),linear-gradient(110deg,#f8f0df 78%,#c1e5ff 100%);border-bottom:3px dashed #f5c879}
+.departure-airline{display:flex;align-items:center;gap:13px;font-weight:800;font-size:clamp(12px,1.7vw,19px);color:#506681;letter-spacing:.02em}
+.departure-airline img{width:47px;height:47px;object-fit:contain}
+.departure-invitation h2{font-size:clamp(35px,5.2vw,66px);line-height:1.16;font-weight:900;letter-spacing:-.075em;color:#112443;margin:34px 0 22px}
+.departure-invitation h2 em{font-style:normal;color:#d42d48;letter-spacing:-.07em}
+.departure-passenger{display:flex;flex-wrap:wrap;gap:15px;align-items:center;margin:0;color:#64758d;font:500 20px/1.4 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.035em}
+.departure-passenger strong{font-weight:650;color:#4b607b;overflow-wrap:anywhere}
+.departure-tear{width:100%;height:var(--tear-height);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;border:0;background:#edb448;color:#0e2648;font:800 clamp(13px,2vw,22px)/1.4 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.12em;text-align:center;transition:background .2s;touch-action:pan-y}
+.departure-tear:hover{background:#f5c364}.departure-tear:active{background:#ffd47a}
+.tear-down{font-size:38px;font-weight:400;line-height:1;animation:tear-down 1.3s ease-in-out infinite}
+.departure-pagination{display:flex;align-items:center;justify-content:space-around;max-width:790px;margin:37px auto 0;gap:12px}
+.departure-pagination span{height:10px;width:10px;border-radius:50%;background:#66573c;opacity:.72}
+.departure-pagination span.active{background:#f1b747;box-shadow:0 0 12px #f1b74788}
+.builder-admin{margin-top:14px}
+.builder-admin label{display:block;font-size:12px;font-weight:800;color:#19496f;margin-bottom:7px}
+.builder-admin input{width:100%;min-height:45px;border:1px solid #b8d2e8;border-radius:9px;padding:10px 12px;font:inherit;font-size:15px;color:#102d53;background:#fff}
+.builder-admin small{display:block;margin-top:6px;font-size:11px;line-height:1.5;color:#5c7188}
+.builder-controls button:disabled{opacity:.65;cursor:wait}
+@keyframes flap-in{from{opacity:.35;transform:rotateX(-88deg)}70%{transform:rotateX(13deg)}to{opacity:1;transform:rotateX(0)}}
+@keyframes departure-led{0%,100%{opacity:.8;box-shadow:0 0 8px #36d98455}50%{opacity:1;box-shadow:0 0 20px 8px #36d98455}}
+@keyframes tear-down{0%,100%{transform:translateY(-3px)}50%{transform:translateY(6px)}}
+@media(max-width:650px){
+  body.intro-active .app-shell{padding:14px 9px 24px}
+  .departure-board{padding:16px 12px 20px;border-width:5px;border-radius:22px}
+  .departure-board-heading{padding-bottom:13px}
+  .departure-board-brand{gap:7px}
+  .departure-board-brand img{width:37px;height:37px;padding:2px;border-radius:8px}
+  .departure-board-brand>span{font-size:19px}
+  .departure-board-brand strong{font-size:clamp(12px,3.2vw,17px);letter-spacing:.09em}
+  .departure-board-vn{font-size:clamp(10px,2.9vw,15px);letter-spacing:.045em}
+  .departure-board-rows{padding-top:11px}
+  .departure-board-row{grid-template-columns:54px minmax(0,1fr) 12px;gap:6px;min-height:45px}
+  .departure-row-label{font-size:10px;letter-spacing:0}
+  .departure-tiles{gap:2px}
+  .flap-tile{flex:1 1 0;min-width:0;max-width:24px;height:34px;border-radius:4px;font-size:clamp(12px,3.5vw,19px)}
+  .departure-led{width:10px;height:10px}
+  .departure-invitation{--tear-height:106px;margin:16px 2px 0;border-radius:22px}
+  .departure-invitation:before,.departure-invitation:after{width:28px;height:28px;bottom:calc(var(--tear-height) - 14px)}
+  .departure-invitation:before{left:-14px}.departure-invitation:after{right:-14px}
+  .departure-invitation-main{min-height:325px;padding:25px 20px 22px}
+  .departure-airline{gap:8px;font-size:clamp(10px,3vw,13px)}
+  .departure-airline img{width:31px;height:31px}
+  .departure-invitation h2{font-size:clamp(30px,8.4vw,46px);margin:27px 0 20px}
+  .departure-passenger{font-size:clamp(11px,3.5vw,15px);gap:7px}
+  .departure-tear{font-size:clamp(11px,2.8vw,15px);letter-spacing:.025em;padding:10px 15px;gap:7px}
+  .tear-down{font-size:29px}
+  .departure-pagination{margin-top:24px}
+  .departure-pagination span{width:7px;height:7px}
+}
+@media(prefers-reduced-motion:reduce){.departure-intro,.flap-tile,.departure-led,.tear-down{animation:none!important;transition:none!important}}
+
+/* Thay khối thông tin lặp bằng bốn hướng dẫn chi tiết, dễ đọc trên điện thoại. */
+.arrival-guide{margin-top:21px}
+.arrival-guide-heading{padding:0 2px 11px;border-bottom:1px solid #d9c8ad}
+.arrival-guide-heading>span{display:block;color:#a67538;font-size:11px;font-weight:800;letter-spacing:.1em}
+.arrival-guide-heading h3{margin:5px 0 0;font-size:20px;color:#112c50;letter-spacing:-.025em}
+.arrival-guide-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:13px}
+.arrival-card{min-width:0;padding:15px 14px;background:#fffdf7;border:1px solid #d8e3ef;border-top:4px solid #d3a64e;border-radius:12px;box-shadow:0 3px 8px #112b4410}
+.arrival-card h4{display:flex;align-items:center;flex-wrap:wrap;gap:4px 7px;margin:0 0 10px;font-size:15px;line-height:1.4;color:#143554;font-weight:800}
+.arrival-card h4>span{font-size:20px;line-height:1}
+.arrival-card h4 small{font-size:11px;font-weight:750;color:#61758c}
+.arrival-card p{font-size:13px;line-height:1.65;color:#394d62;margin:0;overflow-wrap:break-word}
+.arrival-card p strong{color:#102d51;font-weight:800}
+.arrival-card.meeting{border-top-color:#d1a13a;background:#fff9e9}
+.arrival-card.park-one{border-top-color:#2478c5}
+.arrival-card.park-three{border-top-color:#21a562}
+.arrival-card.hall{border-top-color:#8264c8}
+@media(max-width:1130px){.arrival-guide-grid{grid-template-columns:1fr}}
+@media(max-width:850px){.arrival-guide-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.arrival-guide-grid{grid-template-columns:1fr}.arrival-card{padding:13px}.arrival-card p{font-size:13px}.arrival-guide-heading h3{font-size:18px}}
+
+/* ================================================================
+   V10.1 — Lời mời theo xưng hô + mẫu caption có thể chỉnh sửa
+   ================================================================ */
+.closing-note #invite-quote{display:inline;margin:0;font-weight:400;color:#405a77}
+.closing-note .closing-signoff{display:block;margin-top:8px}
+#invite-message,#invite-quote,#invite-closing{overflow-wrap:anywhere;white-space:pre-line}
+.link-builder{grid-template-columns:minmax(0,.87fr) minmax(0,1.13fr);align-items:start;gap:25px}
+.link-builder .builder-copy,.link-builder #guest-form{min-width:0}
+.builder-fields.builder-fields-three{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.builder-fields-three .builder-name{grid-column:1 / -1}
+.builder-presets{margin-top:13px}
+.builder-presets label,.builder-textarea-group label{display:block;color:#174571;font-size:12px;font-weight:800;margin-bottom:7px}
+.builder-presets select,.builder-textarea-group textarea{width:100%;background:#fff;border:1px solid #bed0e1;border-radius:9px;padding:12px 13px;color:#15365b;font:inherit;font-size:14px;line-height:1.55;box-shadow:inset 0 1px 2px #00000005}
+.builder-presets select{min-height:44px}
+.builder-textarea-group{margin-top:12px}
+.builder-textarea-group textarea{min-height:70px;resize:vertical}
+.builder-textarea-group textarea:focus,.builder-fields-three input:focus,.builder-fields-three select:focus,.builder-admin input:focus{outline:2px solid #2882d8;outline-offset:1px}
+.builder-helper{display:block;margin:10px 0 2px;color:#596e86;font-size:11px;line-height:1.7}
+.builder-helper code,.builder-instructions code{color:#9b5b21;background:#f0e5d1;padding:1px 4px;border-radius:4px}
+.builder-preview{margin-top:20px;padding:19px 17px;border:1px solid #e3ca96;border-left:5px solid #e6ae45;background:linear-gradient(135deg,#fffaf0,#f1e5ca);border-radius:13px;box-shadow:0 7px 17px #0b2c4a0b}
+.preview-kicker{font-size:10px;font-weight:900;letter-spacing:.12em;color:#926124}
+.builder-preview h3{font-size:17px;color:#0d3055;margin:10px 0 11px;line-height:1.45;overflow-wrap:anywhere}
+.builder-preview p{margin:7px 0 0;font-size:13px;color:#33516c;line-height:1.65;white-space:pre-line;overflow-wrap:anywhere}
+.builder-preview .preview-quote{font-style:italic;border-top:1px dashed #d3bc92;padding-top:12px;margin-top:14px}
+.builder-preview .preview-closing{font-weight:800;color:#8b5f2d}
+.builder-instructions{margin:15px 0 0!important;font-size:12px!important;line-height:1.7!important}
+.builder-admin{border-top:1px dashed #d1deea;padding-top:15px}
+.admin-input-wrap{display:flex;border:1px solid #b8d2e8;border-radius:10px;overflow:hidden;background:white;align-items:stretch}
+.admin-input-wrap input{min-width:0;flex:1;border:0!important;outline:0;border-radius:0!important}
+.admin-input-wrap button{border:0;border-left:1px solid #d6e1ed;background:#f1f6fb;color:#23476b;font-size:13px;font-weight:800;padding:0 13px;cursor:pointer}
+.builder-admin #api-status{display:block;font-size:11px;line-height:1.55;margin-top:9px;color:#8e4b21}
+.builder-admin #api-status.api-ok{color:#237347}
+.builder-admin #api-status.api-error{color:#a52a34}
+.builder-admin .remember-admin{display:flex!important;gap:8px;align-items:center;font-size:11px!important;line-height:1.5;font-weight:500!important;color:#627287;margin-top:10px;cursor:pointer}
+.remember-admin input{width:16px!important;height:16px!important;min-height:auto!important;accent-color:#144b87}
+.builder-controls{margin-top:15px}
+.builder-controls button{min-height:44px;font-family:'Be Vietnam Pro',Arial,sans-serif;cursor:pointer;background:#0f3e70}
+.builder-controls button:hover{background:#0b3058}
+.builder-controls button:disabled{opacity:.6;cursor:wait}
+.builder-code{margin-top:12px;font-size:12px;color:#64748b}
+.builder-code strong{font:800 16px 'Be Vietnam Pro',sans-serif;color:#164476}
+#builder-output{font-size:12px;margin-top:10px;white-space:pre-wrap;line-height:1.65;overflow-wrap:anywhere}
+@media(max-width:1000px){.link-builder{grid-template-columns:1fr}.builder-preview{margin:14px 0}}
+@media(max-width:500px){.link-builder{padding:17px 14px}.builder-fields.builder-fields-three{grid-template-columns:1fr}.builder-fields-three .builder-name{grid-column:auto}.builder-preview{padding:14px}.builder-preview h3{font-size:15px}.builder-textarea-group textarea{font-size:16px}.builder-presets select{font-size:16px}}

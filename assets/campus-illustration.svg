@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" role="img" aria-label="Sơ đồ campus minh họa Hội trường A5, sân banh và hai lối vào">
+ <defs>
+  <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#dfe8e9" stroke-width=".7"/></pattern>
+  <linearGradient id="lawn" x1="0" x2=".8" y1="0" y2="1"><stop stop-color="#d4edc8"/><stop offset="1" stop-color="#b0d5a4"/></linearGradient>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#28435f" flood-opacity=".18"/></filter>
+  <filter id="pinShadow"><feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#132944" flood-opacity=".35"/></filter>
+ </defs>
+ <rect width="900" height="500" fill="#f7f9f7"/><rect width="900" height="500" fill="url(#grid)" opacity=".6"/>
+ <!--Campus boundary and streets, intentionally schematic-->
+ <path d="M46 347 733 222 853 323 165 461Z" fill="#d7dedf" stroke="#b8c4c9" stroke-width="8"/>
+ <path d="M35 383 729 253 866 357 165 493Z" fill="#edf0ee" stroke="#d7dedf" stroke-width="2"/>
+ <path d="M171 475 840 345" stroke="#c0cbd0" stroke-width="3" stroke-dasharray="18 13"/>
+ <path d="M737 14 869 164 850 355 755 285 742 196Z" fill="#e4e9e7" stroke="#c6d1d0" stroke-width="3"/>
+ <path d="m804 50 29 32" stroke="#fff" stroke-width="4" stroke-dasharray="12 10"/><path d="m843 185-10 120" stroke="#fff" stroke-width="4" stroke-dasharray="12 10"/>
+ <path d="M70 331 702 214 737 245 123 365Z" fill="#e9f4e8" stroke="#acd4ad" stroke-width="2"/>
+ <path d="M95 300 683 190 709 220 115 333Z" fill="#c3dbb9" opacity=".75"/>
+ <!--Lawn areas-->
+ <path d="M275 178 499 136 549 180 333 228Z" fill="url(#lawn)" stroke="#95c59e" stroke-width="2"/>
+ <path d="M553 115 716 85 754 120 594 156Z" fill="url(#lawn)" stroke="#95c59e" stroke-width="2"/>
+ <path d="M311 270 509 232 544 268 352 314Z" fill="url(#lawn)" stroke="#95c59e" stroke-width="2"/>
+ <!--Small green tree discs-->
+ <g fill="#80b584" stroke="#eff9e9" stroke-width="3">
+  <circle cx="285" cy="160" r="12"/><circle cx="313" cy="153" r="10"/><circle cx="344" cy="146" r="13"/><circle cx="373" cy="140" r="11"/>
+  <circle cx="553" cy="205" r="14"/><circle cx="577" cy="196" r="10"/><circle cx="600" cy="187" r="12"/><circle cx="620" cy="178" r="10"/>
+  <circle cx="118" cy="277" r="12"/><circle cx="143" cy="272" r="11"/><circle cx="170" cy="263" r="13"/>
+  <circle cx="670" cy="72" r="10"/><circle cx="687" cy="65" r="11"/><circle cx="707" cy="60" r="9"/>
+ </g>
+ <!--Buildings cast shadows and get simple 3D-like sides-->
+ <g filter="url(#shadow)">
+  <path d="m158 244 90-18 27 22-90 20Z" fill="#d9e2ea"/><path d="m185 268 90-20v44l-90 20Z" fill="#aec1d0"/><path d="m158 244 27 24v44l-27-24Z" fill="#8aa8bd"/><path d="m158 244 90-18 27 22-90 20Z" fill="#f4f8fb" stroke="#c5d2db" stroke-width="2"/>
+  <path d="m66 268 68-13 21 17-68 16Z" fill="#edf3f5"/><path d="m87 288 68-16v57l-68 15Z" fill="#bdcbd4"/><path d="m66 268 21 20v56l-21-19Z" fill="#8ba8bd"/><path d="m66 268 68-13 21 17-68 16Z" fill="#f8fbfc" stroke="#c7d2d9" stroke-width="2"/>
+  <path d="m585 104 103-20 27 24-104 22Z" fill="#ecf2f6"/><path d="m611 130 104-22v76l-104 23Z" fill="#b4c8d8"/><path d="m585 104 26 26v77l-26-25Z" fill="#8eabbf"/><path d="m585 104 103-20 27 24-104 22Z" fill="#fff" stroke="#c1cfdc" stroke-width="2"/>
+  <path d="m392 88 124-24 37 27-126 26Z" fill="#fff"/><path d="m427 117 126-26v72l-126 29Z" fill="#a8bfd3"/><path d="m392 88 35 29v75l-35-29Z" fill="#799cb7"/><path d="m392 88 124-24 37 27-126 26Z" fill="#f7fcff" stroke="#b7c8d6" stroke-width="3"/>
+ </g>
+ <!--Window details-->
+ <g stroke="#f2f8fd" stroke-width="5" stroke-linecap="round"><path d="m440 135 18-4m14-3 18-4m15-3 18-4M440 154l18-4m14-3 18-4m15-3 18-4"/><path d="m627 145 17-4m15-3 17-4m-49 31 17-4m15-3 17-4"/></g>
+ <g stroke="#f2f8fd" stroke-width="4"><path d="m198 281 17-4m10-2 17-4m-44 30 17-4m10-2 17-4"/></g>
+ <!--Sports field-->
+ <g transform="translate(356 241) skewY(-11)" filter="url(#shadow)"><rect width="190" height="76" rx="10" fill="#a7d79f" stroke="#eaf9e9" stroke-width="4"/><rect x="14" y="10" width="162" height="56" rx="4" fill="#82c484" stroke="#fff" stroke-width="3"/><path d="M95 10v56" stroke="#f3fff5" stroke-width="2"/><ellipse cx="95" cy="38" rx="21" ry="20" fill="none" stroke="#f3fff5" stroke-width="2"/></g>
+ <!--Indicative walking path-->
+ <path d="M204 362 Q272 328 316 297 T402 194 T461 174" fill="none" stroke="#e58b3c" stroke-width="10" stroke-linecap="round" stroke-dasharray="2 18" opacity=".95"/>
+ <path d="M791 233Q704 217 638 181T527 170" fill="none" stroke="#2b8e7b" stroke-width="9" stroke-linecap="round" stroke-dasharray="2 17" opacity=".9"/>
+ <!--Map labels and markers-->
+ <g font-family="Arial,sans-serif" font-weight="700">
+  <g transform="translate(448 70)" filter="url(#pinShadow)"><path d="M0 0c-18 0-31 13-31 30 0 22 31 52 31 52S31 52 31 30C31 13 18 0 0 0Z" fill="#d22a43" stroke="#fff" stroke-width="4"/><circle cx="0" cy="29" r="11" fill="#fff"/></g>
+  <rect x="391" y="13" width="180" height="37" rx="11" fill="#112744"/><text x="481" y="37" fill="#fff" font-size="18" text-anchor="middle">HỘI TRƯỜNG A5</text>
+  <rect x="368" y="322" width="180" height="29" rx="9" fill="#fff" stroke="#b0d4b2" stroke-width="2"/><text x="458" y="342" text-anchor="middle" fill="#2e6545" font-size="15">SÂN BANH</text>
+  <rect x="80" y="354" width="146" height="39" rx="12" fill="#133c79" stroke="#fff" stroke-width="3"/><text x="153" y="379" font-size="18" fill="#fff" text-anchor="middle">CỔNG 1</text>
+  <rect x="713" y="210" width="151" height="39" rx="12" fill="#0b816b" stroke="#fff" stroke-width="3"/><text x="788" y="235" font-size="18" fill="#fff" text-anchor="middle">CỔNG 3</text>
+  <text x="248" y="242" fill="#5e7589" font-size="16">KHU B</text><text x="636" y="75" fill="#55768e" font-size="15">KHU C</text>
+  <g transform="translate(386 425) rotate(-12)"><rect x="-180" y="-18" width="360" height="29" rx="10" fill="#1b3555"/><text x="0" y="2" text-anchor="middle" font-size="14" fill="#fff">ĐƯỜNG LÝ THƯỜNG KIỆT</text></g>
+  <g transform="translate(842 129) rotate(80)"><rect x="-100" y="-16" width="200" height="28" rx="10" fill="#556479"/><text x="0" y="3" text-anchor="middle" font-size="13" fill="#fff">TÔ HIẾN THÀNH</text></g>
+  <rect x="26" y="14" width="146" height="28" rx="8" fill="#ffffffdd" stroke="#d7dfe0"/><text x="99" y="33" text-anchor="middle" fill="#60778a" font-size="12">SƠ ĐỒ MINH HỌA</text>
+ </g>
+</svg>
