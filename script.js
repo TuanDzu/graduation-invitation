@@ -6,10 +6,10 @@
 
 const CONFIG = {
   graduate: 'Vũ Thái Tuấn',
-  eventDate: '2026-11-27T15:00:00+07:00', // 15:00, giờ Việt Nam
+  eventDate: '2026-11-29T13:30:00+07:00', // 15:00, giờ Việt Nam
   eventTitle: 'Lễ tốt nghiệp — Vũ Thái Tuấn',
   venue: 'Hội trường A5, Trường Đại học Bách khoa, 268 Lý Thường Kiệt, TP. Hồ Chí Minh',
-  // Giờ làm lễ 15:00–16:30, dùng đúng thời lượng 90 phút trong lịch .ics.
+  // Giờ làm lễ 13:30–15:30, dùng đúng thời lượng 90 phút trong lịch .ics.
   eventDurationMinutes: 90,
 };
 
