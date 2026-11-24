@@ -8,7 +8,7 @@ const CONFIG = {
   graduate: 'Vũ Thái Tuấn',
   eventDate: '2026-11-29T13:30:00+07:00', // 15:00, giờ Việt Nam
   eventTitle: 'Lễ tốt nghiệp — Vũ Thái Tuấn',
-  venue: 'Hội trường A5, Trường Đại học Bách khoa, 268 Lý Thường Kiệt, TP. Hồ Chí Minh',
+  venue: 'Tòa nhà B4, Trường Đại học Bách khoa, 268 Lý Thường Kiệt, TP. Hồ Chí Minh',
   // Giờ làm lễ 13:30–15:30, dùng đúng thời lượng 90 phút trong lịch .ics.
   eventDurationMinutes: 120,
 };
@@ -178,7 +178,7 @@ function updateRoutesToPin(pin) {
   if (!pin) return;
   const x = Math.round(pin.x * 20.48);
   const y = Math.round(pin.y * 9.74);
-  // Hai tuyến nối đến PIN người dùng chọn, không kết thúc ở ký hiệu A5.
+  // Hai tuyến nối đến PIN người dùng chọn, không kết thúc ở ký hiệu B4.
   pathGate1.setAttribute('d', `M386 420 C425 435 466 453 507 451 L594 448 Q635 443 684 441 Q765 442 ${x} ${y}`);
   pathGate3.setAttribute('d', `M1820 575 L1761 557 Q1734 529 1725 482 Q1718 457 1643 459 L1479 457 L1352 458 L1212 460 Q1127 463 1057 452 Q917 467 ${x} ${y}`);
 }
